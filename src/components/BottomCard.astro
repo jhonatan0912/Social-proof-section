@@ -1,0 +1,42 @@
+---
+interface BottomCard {
+  avatar: string;
+  name: string;
+  content: string;
+  atributes: string;
+}
+
+const { avatar, name, content, atributes } = Astro.props;
+---
+
+<style>
+  .card {
+    background-color: #502050;
+  }
+  .content::before {
+    content: "''";
+  }
+  .content::after {
+    content: "''";
+  }
+  .position {
+    color: hsl(333, 80%, 67%);
+  }
+</style>
+
+<div class="cards__container grid grid-cols-1 mt-10 md:mt-0">
+  <div class={atributes}>
+    <div class="top flex gap-5">
+      <figure>
+        <img src={avatar} alt={name} class="rounded-full" />
+      </figure>
+      <div class="text-xl">
+        <p class="text-white font-bold">{name}</p>
+        <p class="position font-medium">Verified Buyer</p>
+      </div>
+    </div>
+    <div class="body text-xl">
+      <p class="content text-white">{content}</p>
+    </div>
+  </div>
+</div>

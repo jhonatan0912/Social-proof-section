@@ -1,0 +1,31 @@
+---
+interface TopCard {
+  paragraph: string;
+  atributes: string;
+}
+const { paragraph, atributes } = Astro.props;
+---
+
+<style>
+  body {
+    /* background-color: hsl(300, 43%, 22%); */
+    /* background-color: hsl(333, 80%, 67%); */
+    /* background-color: hsl(303, 10%, 53%); */
+    /* background-color: hsl(300, 24%, 96%); */
+  }
+  .card {
+    background-color: hsl(300, 24%, 96%);
+    color: hsl(300, 43%, 22%);
+  }
+</style>
+
+<div class={atributes}>
+  <div class="stars flex justify-center gap-2">
+    <img src="icon-star.svg" alt="star" class="w-6" />
+    <img src="icon-star.svg" alt="star" class="w-6" />
+    <img src="icon-star.svg" alt="star" class="w-6" />
+    <img src="icon-star.svg" alt="star" class="w-6" />
+    <img src="icon-star.svg" alt="star" class="w-6" />
+  </div>
+  <p>{paragraph}</p>
+</div>
